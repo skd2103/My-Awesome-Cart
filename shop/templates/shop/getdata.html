@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product data</title>
+</head>
+<body>
+Product data showing from dataBase
+
+{% block content %}
+
+  {{one_data}}
+
+<table border="2">
+  <tr>
+    <th>Product Name</th>
+    <th>Category</th>
+    <th>SubCategory</th>
+    <th>Price</th>
+    <th>Description</th>
+    <th>Product Listing Data</th>
+    <th>Product Image</th>
+  </tr>
+  {% for x in my_data%}
+  <tr>
+    <td>{{ x.prduct_name }}</td>
+    <td>{{ x.category }}</td>
+    <td>{{ x.subcategory }}</td>
+    <td>{{ x.price }}</td>
+    <td>{{ x.decs }}</td>
+    <td>{{ x.pub_date }}</td>
+    <td> <img src='{{x.image}}' alt="" border=3 height=100 width=100> </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock content %}
+
+</body>
+</html>
